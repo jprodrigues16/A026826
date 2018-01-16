@@ -19,9 +19,8 @@ import javax.net.ssl.HttpsURLConnection;
 public class LigacaoNet {
     private static final String LOG_TAG = LigacaoNet.class.getSimpleName();
     private static final String API_CONNECTION = "https://eu.api.battle.net/d3/profile/";
-    private static final String SEARCH_ID = "battletag";
+    private static final String SEARCH_ID = "";
     //private static final String MAX_RESULTS = "maxResults";
-    private static final String PRINT_TYPE = "printType";
 
     @Nullable
     static String getAccountinfo(String pesquisaString) {
@@ -31,8 +30,11 @@ public class LigacaoNet {
 
         try {
             Uri builtUri = Uri.parse(API_CONNECTION).buildUpon()
-                    .appendQueryParameter(SEARCH_ID, pesquisaString)
-                    .appendQueryParameter(PRINT_TYPE, "/?locale=en_GB&apikey=3fyhs7rjas7gbykdvrydkzcug7ms549x")
+                    .appendPath(pesquisaString)
+                    .appendPath("")
+                    .appendQueryParameter("", "locale")
+                    .appendPath("en_GB&apikey")
+                    .appendPath("3fyhs7rjas7gbykdvrydkzcug7ms549x")
                     .build();
 
             URL requestURL = new URL(builtUri.toString());

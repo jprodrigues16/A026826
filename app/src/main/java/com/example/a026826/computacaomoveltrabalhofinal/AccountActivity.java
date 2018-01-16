@@ -32,6 +32,7 @@ public class AccountActivity extends AppCompatActivity {
     public void searchaccount(View view) {
         String palavraAdicionada = battletag.getText().toString();
         Log.i(TAG, "searchaccount: " + palavraAdicionada);
+        new AsyncTask(tvAccount, tvChar).execute(palavraAdicionada);
 
     }
 }
