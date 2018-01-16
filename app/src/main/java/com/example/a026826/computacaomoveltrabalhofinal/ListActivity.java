@@ -5,13 +5,18 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-public class ListActivity extends ActionBarActivity {
+public class ListActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editName,editSurname,editMarks ,editTextId;
     Button btnAddData;
@@ -19,15 +24,18 @@ public class ListActivity extends ActionBarActivity {
     Button btnDelete;
     Button btnviewUpdate;
 
+    String[] type = { "AGL","TEQ","INT","PHY","STR","Rainbow Team","Extreme","Super","Category" };
+    String[] leader = { "Goku SSJ3","Goku Rose","Super Vegito","Broly","Omega Sheron","Gogeta","Freiza Full Power","Goku Black","Janemba" };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
         myDb = new DatabaseHelper(this);
 
-        editName = (EditText)findViewById(R.id.editText_name);
+        editName = (AutoCompleteTextView)findViewById(R.id.editText_name);
         editSurname = (EditText)findViewById(R.id.editText_surname);
-        editMarks = (EditText)findViewById(R.id.editText_Marks);
+        editMarks = (AutoCompleteTextView)findViewById(R.id.editText_Marks);
         editTextId = (EditText)findViewById(R.id.editText_id);
         btnAddData = (Button)findViewById(R.id.button_add);
         btnviewAll = (Button)findViewById(R.id.button_viewAll);
@@ -39,6 +47,16 @@ public class ListActivity extends ActionBarActivity {
         DeleteData();
 
         menuBtns();
+
+        ArrayAdapter<String> tipos = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, type);
+        AutoCompleteTextView vertipo = (AutoCompleteTextView) findViewById(R.id.editText_name);
+        vertipo.setThreshold(1);
+        vertipo.setAdapter(tipos);
+
+        ArrayAdapter<String> leaders = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, leader);
+        AutoCompleteTextView verlead = (AutoCompleteTextView) findViewById(R.id.editText_Marks);
+        verlead.setThreshold(1);
+        verlead.setAdapter(leaders);
     }
 
     public void menuBtns(){
@@ -100,6 +118,7 @@ public class ListActivity extends ActionBarActivity {
 
     public void viewAll() {
         btnviewAll.setOnClickListener(
+
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -113,16 +132,17 @@ public class ListActivity extends ActionBarActivity {
                         StringBuffer buffer = new StringBuffer();
                         while (res.moveToNext()) {
                             buffer.append("Id :"+ res.getString(0)+"\n");
-                            buffer.append("Name :"+ res.getString(1)+"\n");
-                            buffer.append("Surname :"+ res.getString(2)+"\n");
-                            buffer.append("Marks :"+ res.getString(3)+"\n\n");
+                            buffer.append("Type :"+ res.getString(1)+"\n");
+                            buffer.append("Rank :"+ res.getString(2)+"\n");
+                            buffer.append("Leader :"+ res.getString(3)+"\n\n");
                         }
 
                         // Show all data
-                        showMessage("Data",buffer.toString());
+                        showMessage("List of Teams",buffer.toString());
                     }
                 }
         );
+
     }
 
     public void dokkan(View v) {

@@ -18,6 +18,9 @@
         <activity android:name=".ListActivity">
 
         </activity>
+        <activity android:name=".AccountActivity">
+
+        </activity>
     </application>
 
 </manifest>
