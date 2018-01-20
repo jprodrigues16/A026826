@@ -20,13 +20,19 @@ public class AsyncTask extends android.os.AsyncTask<String, Void, String> {
     private TextView tvGuild;
     private TextView tvLastChar;
     private Button btn_add;
-    DatabaseHelper myDb;
+    private TextView info1;
+    private TextView info2;
+    private TextView info3;
 
-    public AsyncTask(TextView tvAccount, TextView tvChar, TextView tvGuild, TextView tvLastChar, Button btn_add) {
+    public AsyncTask(TextView tvAccount, TextView tvChar, TextView tvGuild, TextView tvLastChar, Button btn_add,
+                     TextView info1, TextView info2, TextView info3) {
         this.tvChar = tvChar;
         this.tvAccount = tvAccount;
         this.tvGuild = tvGuild;
         this.tvLastChar = tvLastChar;
+        this.info1 = info1;
+        this.info2 = info2;
+        this.info3 = info3;
         this.btn_add = btn_add;
     }
 
@@ -70,10 +76,13 @@ public class AsyncTask extends android.os.AsyncTask<String, Void, String> {
                 //jsonObject8 = jsonObject.getInt("lastUpdate");
                 tvChar.setText("Last Update: " + jsonObject8 + "\nParagon Level: " + jsonObject4 + "\nParagon Level Hardcore: " +
                 jsonObject5 + "\nParagon Level Season: " + jsonObject6);
-                tvAccount.setText("BattleTag: " + jsonObject2);
-                tvLastChar.setText("Last Hero ID Played: " + jsonObject7);
-                tvGuild.setText("Guild: " + jsonObject3);
+                tvAccount.setText("" + jsonObject2);
+                tvLastChar.setText("" + jsonObject7);
+                tvGuild.setText("" + jsonObject3);
                 btn_add.setVisibility(View.VISIBLE);
+                info1.setVisibility(View.VISIBLE);
+                info2.setVisibility(View.VISIBLE);
+                info3.setVisibility(View.VISIBLE);
             } catch (Exception ez) {
                 ez.printStackTrace();
             }

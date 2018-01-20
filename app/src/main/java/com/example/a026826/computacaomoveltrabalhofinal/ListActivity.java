@@ -24,8 +24,8 @@ public class ListActivity extends AppCompatActivity {
     Button btnDelete;
     Button btnviewUpdate;
 
-    String[] battleTag = { "CiscoIvo#2988","pberna#2814","Noctis#2645","ramone#2642","SunWhisper#2575","yanh#21183" };
-    String[] leader = { "Pinguim","Caramelo","Bananas" };
+    String[] battleTag = { "CiscoIvo#2988","pberna#2814","Psasp91#2972" };
+    String[] heroId = { "86630560","92264701","96092020" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class ListActivity extends AppCompatActivity {
         vertipo.setThreshold(1);
         vertipo.setAdapter(tipos);
 
-        ArrayAdapter<String> leaders = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, leader);
+        ArrayAdapter<String> leaders = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, heroId);
         AutoCompleteTextView verlead = (AutoCompleteTextView) findViewById(R.id.editText_Marks);
         verlead.setThreshold(1);
         verlead.setAdapter(leaders);
@@ -131,10 +131,10 @@ public class ListActivity extends AppCompatActivity {
 
                         StringBuffer buffer = new StringBuffer();
                         while (res.moveToNext()) {
-                            buffer.append("Id :"+ res.getString(0)+"\n");
-                            buffer.append("Type :"+ res.getString(1)+"\n");
-                            buffer.append("Rank :"+ res.getString(2)+"\n");
-                            buffer.append("Leader :"+ res.getString(3)+"\n\n");
+                            buffer.append("ID: "+ res.getString(0)+"\n");
+                            buffer.append("BattleTag:"+ res.getString(1)+"\n");
+                            buffer.append("Guild:"+ res.getString(2)+"\n");
+                            buffer.append("Last Hero ID PLayed:"+ res.getString(3)+"\n\n");
                         }
 
                         // Show all data
@@ -143,11 +143,6 @@ public class ListActivity extends AppCompatActivity {
                 }
         );
 
-    }
-
-    public void diabloOfficial(View v) {
-        Intent diabloDownload = new Intent(Intent.ACTION_VIEW, Uri.parse("https://us.battle.net/d3/en/"));
-        startActivity(diabloDownload);
     }
 
     public void showMessage(String title,String Message){

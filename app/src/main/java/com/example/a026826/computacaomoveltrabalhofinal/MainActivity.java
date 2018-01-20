@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void dokkan(View v) {
-        Intent dokkanDownload = new Intent(Intent.ACTION_VIEW, Uri.parse("http://download1643.mediafire.com/0bl0z3e4t0wg/cl8oyol83ifbd2t/dbz.global.v3.6.1_c1.renzyyy.none.apk"));
+        Intent dokkanDownload = new Intent(Intent.ACTION_VIEW, Uri.parse("https://us.battle.net/d3/en/"));
         startActivity(dokkanDownload);
     }
 

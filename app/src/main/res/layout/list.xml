@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background_2"
     android:layout_height="match_parent">
 
     <Button
@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/home_btn2"
-        android:layout_width="70dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -61,26 +61,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
-
-    <Button
-        android:id="@+id/download_btn"
-        android:layout_width="155dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="dokkan"
-        android:text="Download APK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.727" />
 
     <TextView
         android:id="@+id/textView"
@@ -95,10 +76,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Gear"
+        android:text="BattleTag"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="30sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.027"
@@ -109,32 +90,32 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="120dp"
+        android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editText_name"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Rank"
+        android:text="Last Hero Played"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="30sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintVertical_bias="0.239" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="106dp"
+        android:layout_width="50dp"
         android:layout_height="38dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -145,10 +126,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Class"
+        android:text="Guild"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="30sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.028"
@@ -159,7 +140,7 @@
 
     <EditText
         android:id="@+id/editText_surname"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_alignTop="@+id/textView2"
         android:layout_marginBottom="8dp"
@@ -270,7 +251,7 @@
 
     <TextView
         android:id="@+id/textView_id"
-        android:layout_width="134dp"
+        android:layout_width="30dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -284,7 +265,7 @@
         android:text="ID"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="30sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
@@ -295,7 +276,7 @@
 
     <EditText
         android:id="@+id/editText_id"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -313,7 +294,7 @@
 
     <AutoCompleteTextView
         android:id="@+id/editText_name"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -329,7 +310,7 @@
 
     <AutoCompleteTextView
         android:id="@+id/editText_Marks"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -342,5 +323,41 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.364" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Listas"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Home"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
