@@ -47,6 +47,7 @@ public class ListActivity extends AppCompatActivity {
         DeleteData();
 
         menuBtns();
+        menuBtns2();
 
         ArrayAdapter<String> tipos = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, battleTag);
         AutoCompleteTextView vertipo = (AutoCompleteTextView) findViewById(R.id.editText_name);
@@ -65,6 +66,16 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ListActivity.this, MainActivity.class));
+            }
+        });
+    }
+
+    public void menuBtns2(){
+        Button account_view = (Button)  findViewById(R.id.teambuild_btn2);
+        account_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListActivity.this, AccountActivity.class));
             }
         });
     }

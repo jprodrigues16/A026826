@@ -3,12 +3,8 @@ package com.example.a026826.computacaomoveltrabalhofinal;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 
 /**
  * Created by A026826 on 16/01/2018.

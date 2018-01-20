@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/card_btn2"
+        android:id="@+id/card_btn3"
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginBottom="8dp"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.982" />
 
     <Button
-        android:id="@+id/home_btn2"
+        android:id="@+id/home_btn3"
         android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_marginBottom="8dp"

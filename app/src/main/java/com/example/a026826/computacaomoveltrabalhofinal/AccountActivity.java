@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by A026826 on 16/01/2018.
@@ -37,13 +38,14 @@ public class AccountActivity extends AppCompatActivity {
         tvChar = (TextView) findViewById(R.id.char_text);
         tvLastChar = (TextView) findViewById(R.id.lastchar_text);
         tvGuild = (TextView) findViewById(R.id.tv_guild);
-        home_btn = (Button) findViewById(R.id.home_btn2);
-        card_btn = (Button) findViewById(R.id.card_btn2);
+        home_btn = (Button) findViewById(R.id.home_btn3);
+        card_btn = (Button) findViewById(R.id.card_btn3);
 
         btn_add = (Button) findViewById(R.id.btn_add);
         myDb = new DatabaseHelper(this);
         AddData();
         menuBtns();
+        menuBtns2();
     }
 
     public void searchaccount(View view) {
@@ -54,14 +56,17 @@ public class AccountActivity extends AppCompatActivity {
     }
 
     public void menuBtns(){
-        Button home = (Button) findViewById(R.id.home_btn2);
-        Button lista = (Button) findViewById(R.id.home_btn2);
+        Button home = (Button) findViewById(R.id.home_btn3);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AccountActivity.this, MainActivity.class));
             }
         });
+    }
+
+    public void menuBtns2(){
+        Button lista = (Button) findViewById(R.id.card_btn3);
         lista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +83,8 @@ public class AccountActivity extends AppCompatActivity {
                         boolean isInserted = myDb.insertData(tvAccount.getText().toString(),
                                 tvGuild.getText().toString(),
                                 tvLastChar.getText().toString() );
+
+                        Toast.makeText(AccountActivity.this,"Data Update",Toast.LENGTH_LONG).show();
                     }
                 });
     }

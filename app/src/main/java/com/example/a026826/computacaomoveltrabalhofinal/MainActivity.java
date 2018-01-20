@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ProximaPagina();
+        ProximaPagina2();
     }
 
     public void dokkan(View v) {
@@ -25,13 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void ProximaPagina(){
         Button proximo = (Button) findViewById(R.id.list_btn);
-        Button account_view = (Button)  findViewById(R.id.teambuild_btn);
         proximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ListActivity.class));
             }
         });
+
+    }
+    public void ProximaPagina2(){
+        Button account_view = (Button)  findViewById(R.id.teambuild_btn);
         account_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
