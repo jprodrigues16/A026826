@@ -28,6 +28,8 @@ public class LigacaoNet {
         BufferedReader reader = null;
         String accountJSONString = null;
 
+        //https://eu.api.battle.net/d3/profile/CiscoIvo%232899/?locale=en_GB&apikey=3fyhs7rjas7gbykdvrydkzcug7ms549x
+
         try {
             Uri builtUri = Uri.parse(API_CONNECTION).buildUpon()
                     .appendPath(pesquisaString)
