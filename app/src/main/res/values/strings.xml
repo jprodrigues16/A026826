@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ComputacaoMovelTrabalhoFinal</string>
     <string name="instrucao">Enter your BattleTag name to find your heros and lvls</string>
+    <string name="time"></string>
+    <string name="lastchar"></string>
     <string name="btinput">Enter BattleTag</string>
     <string name="btn_text">Search Account</string>
 </resources>

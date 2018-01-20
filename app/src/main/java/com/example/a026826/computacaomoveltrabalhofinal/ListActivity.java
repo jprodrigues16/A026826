@@ -24,8 +24,8 @@ public class ListActivity extends AppCompatActivity {
     Button btnDelete;
     Button btnviewUpdate;
 
-    String[] type = { "AGL","TEQ","INT","PHY","STR","Rainbow Team","Extreme","Super","Category" };
-    String[] leader = { "Goku SSJ3","Goku Rose","Super Vegito","Broly","Omega Sheron","Gogeta","Freiza Full Power","Goku Black","Janemba" };
+    String[] battleTag = { "CiscoIvo#2988","pberna#2814","Noctis#2645","ramone#2642","SunWhisper#2575","yanh#21183" };
+    String[] leader = { "Pinguim","Caramelo","Bananas" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class ListActivity extends AppCompatActivity {
 
         menuBtns();
 
-        ArrayAdapter<String> tipos = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, type);
+        ArrayAdapter<String> tipos = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, battleTag);
         AutoCompleteTextView vertipo = (AutoCompleteTextView) findViewById(R.id.editText_name);
         vertipo.setThreshold(1);
         vertipo.setAdapter(tipos);
@@ -145,9 +145,9 @@ public class ListActivity extends AppCompatActivity {
 
     }
 
-    public void dokkan(View v) {
-        Intent dokkanDownload = new Intent(Intent.ACTION_VIEW, Uri.parse("http://download1643.mediafire.com/0bl0z3e4t0wg/cl8oyol83ifbd2t/dbz.global.v3.6.1_c1.renzyyy.none.apk"));
-        startActivity(dokkanDownload);
+    public void diabloOfficial(View v) {
+        Intent diabloDownload = new Intent(Intent.ACTION_VIEW, Uri.parse("https://us.battle.net/d3/en/"));
+        startActivity(diabloDownload);
     }
 
     public void showMessage(String title,String Message){
